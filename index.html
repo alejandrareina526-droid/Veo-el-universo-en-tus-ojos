@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🌌 Mi universo tiene tu nombre</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+    to bottom,
+    #02010f,
+    #07183b,
+    #02010f
+    );
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* -------------------
+   ESTRELLAS
+------------------- */
+
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:100%;
+height:100%;
+
+
+background-image:
+
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(white 2px, transparent 2px);
+
+
+background-size:
+
+100px 100px,
+200px 200px;
+
+
+animation:
+
+estrellas 80s linear infinite;
+
+
+z-index:-2;
+
+}
+
+
+
+@keyframes estrellas{
+
+from{
+
+transform:translateY(0);
+
+}
+
+
+to{
+
+transform:translateY(-600px);
+
+}
+
+}
+
+
+
+
+/* -------------------
+   LUNA
+------------------- */
+
+
+.luna{
+
+position:fixed;
+
+top:70px;
+
+right:10%;
+
+
+width:160px;
+
+height:160px;
+
+
+background:#fff;
+
+
+border-radius:50%;
+
+
+box-shadow:
+
+0 0 30px white,
+0 0 80px white,
+0 0 130px #9ecbff;
+
+
+animation:
+
+lunaBrilla 4s infinite alternate;
+
+
+}
+
+
+
+@keyframes lunaBrilla{
+
+
+from{
+
+transform:scale(1);
+
+}
+
+
+to{
+
+transform:scale(1.08);
+
+}
+
+
+}
+
+
+
+/* -------------------
+   PORTADA
+------------------- */
+
+
+.inicio{
+
+
+height:100vh;
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+
+text-align:center;
+
+
+padding:30px;
+
+
+}
+
+
+
+
+.titulo{
+
+
+font-family:'Dancing Script',cursiva;
+
+
+font-size:70px;
+
+
+text-shadow:
+
+0 0 20px #9ecbff,
+0 0 40px #6b9cff;
+
+
+}
+
+
+
+.subtitulo{
+
+
+margin-top:25px;
+
+
+font-size:22px;
+
+
+color:#dbe8ff;
+
+
+}
+
+
+
+/* -------------------
+ CARTA
+------------------- */
+
+
+#carta{
+
+
+padding:80px 20px;
+
+
+text-align:center;
+
+
+}
+
+
+
+
+.titulo-seccion{
+
+
+font-family:'Dancing Script',cursiva;
+
+
+font-size:50px;
+
+
+margin-bottom:50px;
+
+
+}
+
+
+
+
+/* SOBRE */
+
+
+.sobre{
+
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+
+}
+
+
+
+.icono-sobre{
+
+
+font-size:130px;
+
+
+animation:
+
+flotar 3s infinite ease-in-out;
+
+
+}
+
+
+
+@keyframes flotar{
+
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+
+
+
+
+button{
+
+
+margin-top:30px;
+
+
+padding:15px 40px;
+
+
+border:none;
+
+
+border-radius:50px;
+
+
+background:#ff6b9d;
+
+
+color:white;
+
+
+font-size:20px;
+
+
+cursor:pointer;
+
+
+box-shadow:
+
+0 0 25px #ff6b9d;
+
+
+transition:.3s;
+
+
+}
+
+
+
+button:hover{
+
+
+transform:scale(1.1);
+
+
+}
+
+
+
+/* CARTA ESCRITA */
+
+
+.carta-escrita{
+
+
+display:none;
+
+
+max-width:850px;
+
+
+margin:50px auto;
+
+
+padding:40px;
+
+
+background:rgba(255,255,255,.10);
+
+
+border-radius:25px;
+
+
+backdrop-filter:blur(10px);
+
+
+font-size:18px;
+
+
+line-height:2;
+
+
+text-align:left;
+
+
+box-shadow:
+
+0 0 30px rgba(255,255,255,.1);
+
+
+}
+
+
+
+.cursor{
+
+
+border-right:3px solid white;
+
+
+animation:
+
+cursor 0.7s infinite;
+
+
+}
+
+
+
+@keyframes cursor{
+
+
+50%{
+
+border-color:transparent;
+
+}
+
+}
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:768px){
+
+
+.titulo{
+
+font-size:45px;
+
+}
+
+
+.luna{
+
+width:100px;
+
+height:100px;
+
+}
+
+
+}
+
+
+/* HISTORIA BAJO LA LUNA */
+
+.historia{
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+
+.tarjeta{
+
+max-width:800px;
+
+margin:auto;
+
+background:rgba(255,255,255,.08);
+
+padding:35px;
+
+border-radius:25px;
+
+line-height:2;
+
+font-size:18px;
+
+backdrop-filter:blur(10px);
+
+}
+
+
+
+/* MENSAJES SECRETOS */
+
+
+.secretos{
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+
+.mensaje{
+
+max-width:400px;
+
+margin:25px auto;
+
+padding:25px;
+
+background:rgba(255,255,255,.1);
+
+border-radius:20px;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+
+.mensaje:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 25px #ff9fc5;
+
+}
+
+
+.contenido-secreto{
+
+display:none;
+
+margin-top:20px;
+
+color:#ffd6e5;
+
+}
+
+
+
+/* CONSTELACIÓN */
+
+
+.constelacion{
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+
+.estrellas-recuerdo{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+}
+
+
+.recuerdo{
+
+width:90px;
+
+height:90px;
+
+border-radius:50%;
+
+background:white;
+
+color:#07183b;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+cursor:pointer;
+
+box-shadow:0 0 30px white;
+
+transition:.4s;
+
+}
+
+
+.recuerdo:hover{
+
+transform:scale(1.2);
+
+}
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="luna"></div>
+
+
+
+<section class="inicio">
+
+
+<div>
+
+
+<h1 class="titulo">
+
+🌌 Mi universo tiene tu nombre
+
+</h1>
+
+
+<p class="subtitulo">
+
+Entre millones de estrellas...
+
+hay una que tiene mi corazón. ❤️
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<section id="carta">
+
+
+<h2 class="titulo-seccion">
+
+💌 Para mi Emo ❤️
+
+</h2>
+
+
+<div class="sobre">
+
+
+<div class="icono-sobre">
+
+💌
+
+</div>
+
+
+<button onclick="abrirCarta()">
+
+Abrir mi carta ❤️
+
+</button>
+
+
+</div>
+
+
+
+<div class="carta-escrita" id="cartaEscrita">
+
+<p id="textoCarta"></p>
+
+
+</div>
+
+
+</section>
+
+<script>
+
+const sonidoTecla = new Audio("tecla");
+sonidoTecla.volume = 0.5;
+
+
+
+const textoCarta = `Hola, mi niño. ❤️
+
+
+Bienvenido a un pequeño pedacito de mi corazón.
+
+Si estás leyendo esto, quiero que sepas que cada palabra, cada detalle y cada parte de este lugar fueron creados pensando en ti.
+
+
+Tal vez para alguien más sea solo una página, pero para mí significa mucho más.
+
+Es un espacio donde pude guardar un poquito de mis sentimientos, de nuestros recuerdos y de todo lo bonito que hemos construido juntos.
+
+
+Mi Emo, quería hacerte algo especial.
+
+Algo que pudiera recordarte lo importante que eres para mí y lo mucho que significas en mi vida.
+
+Algo que cuando lo vieras pudiera sacarte una sonrisa y hacerte sentir todo el cariño con el que fue creado.
+
+
+Quiero que siempre recuerdes lo especial que eres para mí.
+
+A veces es difícil encontrar las palabras exactas para explicar lo que una persona significa, pero quiero que sepas que tienes un lugar muy bonito en mi corazón.
+
+
+Gracias por llegar a mi vida.
+
+Gracias por cada sonrisa, por cada abrazo, por cada conversación y por todos esos momentos que poco a poco se han convertido en recuerdos que guardaré con mucho cariño.
+
+
+Admiro muchas cosas de ti, mi niño.
+
+Admiro tu forma de esforzarte, tu manera de seguir adelante, tu corazón y la persona que eres.
+
+
+Me gusta compartir momentos contigo y seguir descubriendo cada día más de ti.
+
+
+Sé que no somos perfectos y que en el camino pueden existir días fáciles y días difíciles.
+
+Pero también sé que cada experiencia nos ayuda a aprender, crecer y valorar más nuestra historia.
+
+
+Mi Emo, quiero que siempre recuerdes que hay alguien que piensa en ti.
+
+Alguien que se alegra por tus logros, que desea verte feliz y que agradece a Dios por haberte puesto en su camino.
+
+
+Tú eres mi nuevo sueño. ❤️
+
+
+Y todos los días le doy gracias a Dios por permitirme despertar y ver que ese sueño se hizo realidad.
+
+Por regalarme la oportunidad de compartir mi vida contigo y por dejarme conocer a una persona tan especial como tú.
+
+
+Si algún día estás triste, cansado o simplemente me extrañas, vuelve a este lugar.
+
+
+Aquí encontrarás palabras hechas con cariño, pequeños mensajes escondidos y un pedacito de mi corazón esperándote.
+
+
+Porque aunque el universo sea enorme y tenga millones de estrellas...
+
+para mí hay una que brilla de una manera diferente.
+
+
+🌟 Y esa estrella eres tú. 🌟
+
+
+Gracias por existir.
+
+Gracias por ser tú.
+
+Y gracias por permitirme compartir momentos tan bonitos contigo.
+
+
+Espero que nunca dudes de lo importante y especial que eres para mí.
+
+
+Que este pequeño universo siempre te recuerde que hay alguien que piensa en ti y que guarda con mucho cariño cada momento vivido a tu lado.❤️
+
+
+Con mucho amor,
+
+Aleja ❤️`;
+
+
+
+let posicion = 0;
+
+
+
+function abrirCarta(){
+
+
+document.querySelector(".sobre").style.display="none";
+
+
+document.getElementById("cartaEscrita").style.display="block";
+
+
+escribir();
+
+
+}
+
+
+
+
+function escribir(){
+
+
+if(posicion < textoCarta.length){
+
+
+document.getElementById("textoCarta").innerHTML += textoCarta.charAt(posicion);
+
+sonidoTecla.currentTime = 0;
+sonidoTecla.play()
+.then(()=>{
+console.log("sonido funcionando");
+})
+.catch(error=>{
+console.log(error);
+});
+
+posicion++;
+
+
+setTimeout(escribir,35);
+
+
+}
+
+
+}
+
+
+
+
+</script>
+<!-- HISTORIA BAJO LA LUNA -->
+
+<section class="historia">
+
+<h2 class="titulo-seccion">
+🌙 Nuestra historia bajo la luna
+</h2>
+
+
+<div class="tarjeta">
+
+<p>
+Dicen que cada estrella guarda una historia...
+y la nuestra empezó como una pequeña luz que poco a poco fue creciendo.
+</p>
+
+
+<br>
+
+
+<p>
+Entre risas, conversaciones, momentos bonitos y aprendizajes,
+fuimos creando un universo propio.
+</p>
+
+
+<br>
+
+
+<p>
+Un universo donde cada recuerdo tiene un lugar especial,
+porque cada momento contigo se convirtió en una estrella más.
+❤️
+</p>
+
+
+</div>
+
+</section>
+
+
+
+
+<!-- MENSAJES SECRETOS -->
+
+<section class="secretos">
+
+
+<h2 class="titulo-seccion">
+🔐 Mensajes secretos
+</h2>
+
+
+
+<div class="mensaje" onclick="mostrarMensaje(1)">
+
+✨ Mensaje secreto #1
+
+<p class="contenido-secreto" id="mensaje1">
+
+Siempre recuerda que alguien cree en ti y está orgullosa de la persona que eres. ❤️
+
+</p>
+
+</div>
+
+
+
+
+<div class="mensaje" onclick="mostrarMensaje(2)">
+
+✨ Mensaje secreto #2
+
+<p class="contenido-secreto" id="mensaje2">
+
+Gracias por cada momento y por cada sonrisa que has regalado a mi vida. 🌙
+
+</p>
+
+</div>
+
+
+
+
+<div class="mensaje" onclick="mostrarMensaje(3)">
+
+✨ Mensaje secreto #3
+
+<p class="contenido-secreto" id="mensaje3">
+
+Aunque existan días difíciles, mi cariño por ti sigue teniendo un lugar especial. ❤️
+
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- CONSTELACIÓN DE RECUERDOS -->
+
+<section class="constelacion">
+
+
+<h2 class="titulo-seccion">
+✨ Constelación de recuerdos
+</h2>
+
+
+<div class="estrellas-recuerdo">
+
+
+
+
+
+<div class="recuerdo" onclick="mostrarRecuerdo(1)">
+❤️
+</div>
+
+
+<div class="recuerdo" onclick="mostrarRecuerdo(2)">
+🌙
+</div>
+
+
+<div class="recuerdo" onclick="mostrarRecuerdo(3)">
+⭐
+</div>
+
+
+<div class="recuerdo" onclick="mostrarRecuerdo(4)">
+💙
+</div>
+
+
+</div>
+
+
+<div class="mensaje-recuerdo" id="mensajeRecuerdo">
+
+</div>
+
+
+</section>
+
+
+
+
+<script>
+
+
+function mostrarMensaje(numero){
+
+
+let mensaje = document.getElementById("mensaje"+numero);
+
+
+if(mensaje.style.display === "block"){
+
+mensaje.style.display="none";
+
+}
+
+else{
+
+mensaje.style.display="block";
+
+}
+
+
+}
+
+
+</script>
+<!-- GALERÍA DE RECUERDOS -->
+
+<section class="galeria">
+
+<h2 class="titulo-seccion">
+📸 Nuestros recuerdos
+</h2>
+
+
+<div class="fotos">
+
+
+<div class="foto">
+✨
+<div class="foto">
+    <img src="foto1.jpg" alt="Nuestro primer recuerdo">
+    <p>Nuestro primer recuerdo ❤️</p>
+</div>
+
+<div class="foto">
+    <img src="foto2.jpg" alt="Nuestro segundo recuerdo">
+    <p>Una tarde muy especial 🌙</p>
+</div>
+
+<div class="foto">
+    <img src="foto3.jpg" alt="Nuestro tercer recuerdo">
+    <p>Siempre contigo ✨</p>
+</div>
+
+<div class="foto">
+    <img src="foto4.jpg" alt="Nuestro cuarto recuerdo">
+    <p>Mi universo eres tú 💙</p>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- SUEÑOS JUNTOS -->
+
+
+<section class="suenos">
+
+
+<h2 class="titulo-seccion">
+💭 Nuestros sueños juntos
+</h2>
+
+
+<div class="tarjeta">
+
+
+<p>
+
+Sueño con seguir creando recuerdos contigo,
+
+seguir aprendiendo juntos y continuar construyendo
+
+una historia llena de amor, paciencia y momentos bonitos.
+
+❤️
+
+</p>
+
+
+<br>
+
+
+<p>
+
+Que nunca nos falten las sonrisas,
+
+los abrazos y las razones para agradecerle a Dios
+
+por cada día compartido.
+
+🌌
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- FINAL ESPECIAL -->
+
+
+<section class="final">
+
+
+<h2 class="titulo-seccion">
+
+❤️ Para siempre
+
+</h2>
+
+
+
+<div class="final-corazon">
+
+❤️
+
+</div>
+
+
+
+<p>
+
+
+Mi lugar favorito siempre será donde sea que estés tú...
+porque si estás, todo es perfecto...
+
+</p>
+
+
+
+<h3>
+
+Te amo, Emo ❤️
+
+</h3>
+
+
+<p>
+
+Con todo mi cariño,
+
+<br>
+
+Aleja 💙
+
+</p>
+
+
+</section>
+
+
+
+
+
+<!-- CORAZONES FLOTANDO -->
+
+<div id="corazones"></div>
+
+
+
+
+
+<style>
+
+
+.galeria,
+.suenos,
+.final{
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+
+
+.fotos{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+}
+
+
+
+.foto{
+
+    width:220px;
+
+    min-height:300px;
+
+    background:rgba(255,255,255,.1);
+
+    border-radius:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding:15px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.foto img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+.foto p{
+
+    margin-top:10px;
+
+    color:white;
+
+    font-size:16px;
+
+    text-align:center;
+
+}
+
+
+
+.final-corazon{
+
+font-size:100px;
+
+
+animation:
+
+latir 1s infinite;
+
+
+}
+
+
+
+@keyframes latir{
+
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+
+
+
+.final h3{
+
+font-family:'Dancing Script',cursiva;
+
+font-size:50px;
+
+margin:30px;
+
+}
+
+
+
+.corazon{
+
+position:fixed;
+
+bottom:-20px;
+
+font-size:25px;
+
+animation:
+
+subir 5s linear forwards;
+
+}
+
+
+
+@keyframes subir{
+
+
+to{
+
+transform:translateY(-100vh);
+
+opacity:0;
+
+}
+
+}
+
+
+
+</style>
+
+
+
+
+
+<script>
+
+
+function crearCorazon(){
+
+
+let corazon=document.createElement("div");
+
+
+corazon.className="corazon";
+
+
+corazon.innerHTML="❤️";
+
+
+corazon.style.left=Math.random()*100+"vw";
+
+
+document.body.appendChild(corazon);
+
+
+
+setTimeout(()=>{
+
+corazon.remove();
+
+},5000);
+
+
+}
+
+
+
+setInterval(crearCorazon,700);
+
+
+
+
+
+
+
+
+
+
+function mostrarRecuerdo(numero){
+
+let mensaje = document.getElementById("mensajeRecuerdo");
+
+
+let recuerdos = {
+1:"❤️ Nuestra fecha de noviazgo: Fui muy feliz ese día y amo poder decir que somos noviecitoss jsjs.",
+2:"🌙 Nuestras llamadas interminables, donde el tiempo pasaba volando.",
+3:"⭐ Cada momento contigo es único y especial.",
+4:"💙 Gracias por cada recuerdo niño lindo de mi corazón, pestañudo lindooo."
+};
+
+mensaje.innerHTML = recuerdos[numero];
+
+mensaje.style.display="block";
+
+}
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
